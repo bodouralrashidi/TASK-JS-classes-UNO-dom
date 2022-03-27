@@ -30,6 +30,9 @@
  */
 let cards = []; // You will use this array in step 6
 let colours = ["Yellow", "Blue", "Green", "Red"];
+let specialColour = ["Reverse", "Draw", "Skip"];
+
+
 // Continue the code here 👇🏻
 class Card {
   constructor(number, color) {
@@ -40,13 +43,19 @@ class Card {
     return `./images/${this.color}_${this.number}.png`;
   }
 }
+
 colours.forEach((color) => {
 for (let index = 0; index < 10; index++) {
   
     cards.push(new Card(index, color));
-  ;
+  
 }
+specialColour.forEach(special => {cards.push(new Card(special , color))} )
+
 })
+
+
+
 
 
 /**
