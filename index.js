@@ -29,14 +29,32 @@
  *
  */
 let cards = []; // You will use this array in step 6
-
+let colours = ["Yellow", "Blue", "Green", "Red"];
 // Continue the code here 👇🏻
+class Card {
+  constructor(number, color) {
+    this.number = number;
+    this.color = color;
+  }
+  image() {
+    return `./images/${this.color}_${this.number}.png`;
+  }
+}
+colours.forEach((color) => {
+for (let index = 0; index < 10; index++) {
+  
+    cards.push(new Card(index, color));
+  ;
+}
+})
+
 
 /**
  *
  * Don't touch this code
  * This function is going to render the cards array to the HTML page,
  */
+
 function render(array) {
   document.getElementById("cards-container").innerHTML = array
     .map(cardComponent)
